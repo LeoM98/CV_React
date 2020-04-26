@@ -1,295 +1,386 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-.body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
 /* Importacion de fuentes*/
 @font-face{
-    font-family: 'red_rabbit';
-    src: local('red_rabbit'), url('/FONTS/red_rabbit.ttf') format('truetype');
+    font-family: 'Kaushan';
+    src: url('../FONTS/Sofia-Regular.otf') format('truetype');
 }
 
-/* Propiedades a todo el contenido del html*/
+
+/*Inicio de las configuraciones del css*/
 *{
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-
+    box-sizing: border-box;
+    font-family: 'Kaushan';
 }
 
-/* Estructuracion del body*/
-#container{
-    margin: 0 auto;
-    margin-top: 2%;
-    text-align: center;
-    background-color:#a7a7a791;
-    width: 720px;
+/*Fondo del cuerpo y tipografía*/
+body{
+    background-color: #efefee;
+    font-family: sans-serif;
 }
 
-/* Div de color blanco para contrastar, tiene sus propiedades*/
-.blanco{
-    text-align: center;
-    margin-left: 11%;
-    padding-bottom: 5%;
-    background-color: white;
-    width: 78%;
-}
-/* Div de color blanco para contrastar, tiene sus propiedades*/
-.blanco2{
-    text-align: center;
-    margin-left: 11%;
-    padding-bottom: 5%;
-    background-color: white;
-    width: 78%;
+/*Este es el contendor de nuestra imagen y sus propiedades*/
+.perfil{
+    width: 40%;
+    float: right;
 }
 
-/*Propiedades del logo*/
-#container .logo img{
-
-    width: 22%;
-
+/*Propiedades de la imagen de perfil*/
+.perfil img{
+    width: 100%;
+    height: 100%;
 }
-/*Imagen ilustrativa*/
-.imagen{
 
-    display: flex;
-    justify-content: center;
-
-}
-/*Propiedades de la imagen ilustrativa*/
-.imagen img{
+.perfil img:hover{
     
-    width: 78%;
-}
-/*Caja del titulo y alineamiento*/
-#titulo{
-    text-align: center;
-    margin-top: 10%;
-    font-size: 300%;
-    font-weight: bold;
-}
-/*Propiedades de la caja texto*/
-.texto1{
-    margin-top: 1%;
-    display: flex;
-    justify-content: center;   
-    width: 70%;
-    margin-left: 15%;
-}
-/*Caja titulo 2*/
-.titulo2{
+    -webkit-animation: swing 1s ease;
+    animation: swing 1s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
 
-    text-align: center;
-    margin-top: 7.5%;
 }
-/*Propiedades especificas para el texto*/
-.texto1 p{
-    line-height: 182%;
+
+
+/*Contenedor de la información y todas sus propiedades*/
+.info{
+    width: 60%;
+    height: 100vh;
+    float: left;
+    padding: 0 30px;
+    overflow: scroll;
+    overflow-x: hidden;
 }
-/*Propiedades especificas para el titulo 2*/
-.titulo2 h2{
-    margin-left: 15%;
-    padding-top: 8%;
-    font-size: 175%;
-    width: 70%;
+
+/*Con esto le damos el scroll a todo el contenido de el contenedor info*/
+.info::-webkit-scrollbar{
+    width: 0;
 }
-/*Asignacion de propiedades a los href*/
+
+span { 
+    text-shadow: -0.06em 0 green,  0.06em 0 cyan; /* This creates the 3D effect, pretty easy, eh? */
+    letter-spacing: 0.08em; /* make sure the letters don't overlap */
+}
+
+/*Titulo númeor 1 y sus propiedades*/
+.info #title{
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 160%;
+}
+
+#title:focus {
+    outline: none;
+}
+
+#title span {
+    vertical-align: middle;
+    line-height: 1.5em;
+    transition: font-size 8s cubic-bezier(0, 1, 0, 1);
+}
+
+#title span:hover {
+    font-size: 1.5em; /* This adds a hover effect */
+    line-height: 1em;
+    transition: font-size .2s cubic-bezier(0, 0.75, 0, 1);
+}
+
+#title span:active {
+    font-size: 1em;
+    text-shadow: none; /* Click to disable the 3D effect */
+}
+
+#title span::selection {
+background-color: red; /* This hides the selection */
+}
+
+/*Propiedades para las imagenes de las redes*/
+.redes img{
+
+    height: 30px;
+    margin-right: 15px;
+}
+
+/*Caja contenedora de los logos*/
+.redes{
+    margin-top: 20px;
+    margin-left: 15;
+}
+
+.redes img:hover{
+    cursor: url(http://cur.cursors-4u.net/symbols/sym-1/sym57.cur), auto;
+
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+/*Subtitulo*/
+.info h2{
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+/*Justificación del texto*/
+.acerca{
+    text-align: justify;
+}
+
+/*Eliminar todas las decoraciones de los href*/
 a{
     text-decoration: none;
-    color: rgb(23, 180, 240);
-}
-/*Href dentro de los botones, personalizacion*/
-button a{
-    text-decoration: none;
-    color: white;
+    color: black;
 }
 
-/*Propiedades para el boton en especifico*/
-.boton button{
+/*Caracteristicas de todos los lenguajes en sus imagenes*/
+.experiencia img{
+    height: 100px;
+    margin: 5px;
+}
 
-    margin-top: 3%;
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    padding: 7px 50px;
+/*Especificaciones del contenedor de los trabajos*/
+.experiencia{
     display: inline-block;
-    font-size: 16px;
+    width: 28%;
+    padding: 30px 10px;
+    margin: 2%;
+    text-align: center;
+    box-shadow: 0 0 15px 1px rgba(37, 73, 214, 0 , 218);
+    background: #fff;
+}
+
+@-webkit-keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+       transform: translateX(-5px);
+    } 
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+@keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+        transform: translateX(-5px);
+    }
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+.experiencia:hover{
+    box-shadow: inset 0 0 0 3px #53a7ea;
+    -webkit-animation: swing 1s ease;
+    animation: swing 1s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 2;
+}
+
+/*Especificacion del contenido de cada lenguaje*/
+.experiencia small{
+
+    padding-top: 10px;
+    display: block;
+    text-align: justify;
+}
+
+
+/*Propiedades de los proyectos de las imagenes*/
+.proyectos img{
+
+    width: 31%;
+    height: 150px;
+    padding: 4px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+.proyectos img:hover{
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+}
+
+/*Caja para el formulario principal*/
+.formulario{
+    margin-top: 30px;
+}
+
+/*Cajas de las entradas y sus inputs*/
+.entradas input{
+    
+    width: 45%;
+    border: 0;
+    outline: none !important;
+    padding: 10px;
+    margin: 2%;
+    display: inline-block;
+    background: #fff;
+
+}
+
+/*Contenido especial para escribir un mensaje*/
+.mensaje textarea{
+    width: 90%;
+    border: 0;
+    outline: none !important;
+    background: #fff;
+    padding: 10px;
+    margin: 2%;
+
+}
+
+/*Propiedades del botón*/
+.button{
+
+    border: 0;
+    outline: none !important;
+    padding: 10px 10px;
+    text-decoration: none;
+    margin: 00%;
+    border-radius: 5px;
+    transition: .3s;
     cursor: pointer;
-    background-color: #00adef;
-    border-radius: 12px;
+    color: white;
 }
 
-/*Difuminado de colores*/
-.colores{
-    width: 720px;
-    background:linear-gradient(-45grad,red,blue,yellow,purple,orange,green,gray,white,black,gold,silver);
-    height: 5px;
+.btn {
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 0px 17px 0px 10px;
+    font-size: 22px;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+}
+.btn:hover {
+    cursor: url(http://cur.cursors-4u.net/symbols/sym-1/sym57.cur), auto;
 }
 
-/*Propiedades de la caja columna*/
-.colum{
-    margin-top: 4%;
-    display: flex;
+.blue {
+    color: #55acee;
+    border: 2px #55acee solid;
 }
 
-/*Aplicadores de las propiedades a la imagen*/
-.ico1 img{
-    width: 100px;
-    height: 100px;
-    margin-left: 70%;
+.blue:hover {
+    background-color: #55acee;
+    color: #fff
+}
+/*Imagenes y propiedades para que me contacten*/
+.contacto img{
+    width: 20px;
+    margin: -5px 10px;
 }
 
-/*Aplicando propiedades al titulo*/
-.colum .texto2 h3{
-    margin-top: 1%;
-    position: absolute;
-    font-weight: bold;
-}
-/*Aplicacndo propiedades a los parrafos de las separaciones*/
-.colum .texto2 p{
-    margin-top: 13%;
-    text-align: justify;
+.contacto img:hover{
+    animation: swing 1s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 2;
 }
 
-/*Ajustado la caja del texto*/
-.colum .texto2{
-    width: 50%;
-    margin-left: 16%;
+/*Number*/
+.contacto span{
+    margin: 3%;
 }
 
-/*A partir de aquí se hace lo mismo que con las columnas anteriores
-por eso voy a obviar comentar esta parte, porque solo hice un copia y 
-pega de lo que ya había hecho posteriormente*/
-
-.colum2{
-    margin-top: 4%;
-    display: flex;
+.contacto span a:hover{
+    animation: swing 1s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 2;
 }
 
-
-.ico2 img{
-    width: 100px;
-    height: 100px;
-    margin-left: 70%;
+.contacto{
+    margin: 5% 0 5% 25%;
+    width: 65%;
 }
 
-.colum2 .texto3 h3{
-    margin-top: 1%;
-    position: absolute;
-    font-weight: bold;
-}
+/*Usamos los mediaquerys para establecer las propiedades del responsive*/
+/*Condicionamos para que se vea como esta adentro para el ancho de la pantalla*/
+@media only screen and (max-width: 900px){
 
-.colum2 .texto3 p{
-    margin-top: 13%;
-    text-align: justify;
-}
+    /*Apartir de aquí cada una de las condiciones asignadas serán para pantallas pequeñas (celular)*/
 
-.colum2 .texto3{
-    width: 50%;
-    margin-left: 16%;
-}
+    /*Condicionamos cada uno de las cajas de acuerdo a las dimensiones que se quiera*/
 
-/*A partir de aquí se hace lo mismo que con las columnas anteriores
-por eso voy a obviar comentar esta parte, porque solo hice un copia y 
-pega de lo que ya había hecho posteriormente*/
+    .info{
+        width: 100%;
+        overflow: inherit;
+    }
 
+    .perfil{
+        width: 100%;
+    }
 
-.colum3{
-    margin-top: 4%;
-    display: flex;
-}
+    .experiencia{
+        width: 95%;
+        margin-bottom: 10%;
+    }
 
+    .experiencia img{
+        height: 8%;
+        width: 50%;
+        margin: 10px 0; 
+    }
 
-.ico3 img{
-    width: 100px;
-    height: 100px;
-    margin-left: 70%;
-}
+    .proyectos img{
+        width: 47%;
 
-.colum3 .texto4 h3{
-    margin-top: 1%;
-    position: absolute;
-    font-weight: bold;
-}
+    }
+    
+    .contacto{
+        width: 70%;
+    }
+    span{
+        display: block;
+    }
 
-.colum3 .texto4 p{
-    margin-top: 13%;
-    text-align: justify;
-}
-
-.colum3 .texto4{
-    width: 50%;
-    margin-left: 16%;
-}
-
-/*Aqui definimos nuestro pie de pagina y como queremos que este luzca*/
-
-#footer{
-    margin-top: 10%;
-    padding-bottom: 10%;
-}
-
-/*Poner el contendio, en este caso las imagenes en linea*/
-
-#footer ul li{
-
-    display: inline;
-    padding: 1px;
-
-}
-
-#footer p{
-    margin-top: 3%;
-    font-weight: bold;
-
-}
-
-#footer ul li img{
-    width: 3.5%;
-    height: 5%;
-    border-radius:50px;
-}
-
-#footer strong p{
-    margin-top: 1%;
 }
